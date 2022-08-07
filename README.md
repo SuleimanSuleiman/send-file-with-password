@@ -6,7 +6,8 @@ send file with password with database sql server and mongodb using mongoose and 
 وهنا استخدمت نوعان من قواعد البيانات 
 **SQL** AND **NOSQL** 
 بأستخدام مكتبتي 
-### mongoose ### prisma 
+### mongoose 
+### prisma 
 
  /file/sendFile
 **هذا المسار لرفع الصور**
