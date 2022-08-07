@@ -1,0 +1,26 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[File] (
+    [id] INT NOT NULL IDENTITY(1,1),
+    [code] INT NOT NULL,
+    [fileName] NVARCHAR(1000) NOT NULL,
+    [password] NVARCHAR(1000),
+    CONSTRAINT [File_pkey] PRIMARY KEY CLUSTERED ([id]),
+    CONSTRAINT [File_code_key] UNIQUE NONCLUSTERED ([code])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH
