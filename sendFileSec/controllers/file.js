@@ -29,15 +29,6 @@ module.exports.sendFile_post = async (req, res) => {
         }
         const theFile = await File(newFile)
         await theFile.save()
-        //USING PRISMA
-        await prisma.file.create({
-            data: {
-                code: req.body.code,
-                fileName: req.file.filename,
-                password: req.body.password
-            }
-        })
-
         res.redirect('/file/fetchFile')
     } catch (err) {
         if (newFile.fileName != null && newFile.fileName != '') {
